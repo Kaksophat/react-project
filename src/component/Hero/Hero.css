@@ -1,0 +1,141 @@
+.Hero{
+    height: 105vh;
+    /* height: auto; */
+    background: linear-gradient(180deg, #fde1ff 0%, #e1ffe122 50%);
+    display: flex;
+    position: relative;
+}
+.Hero-left{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1.1;
+    gap: 10px;
+    padding-left: 180px;
+}
+.Hero-left h2{
+    font-size: 25px;
+    color: #090909;
+    font-weight: 600;
+}
+.Hero-left p{
+    color: #171717;
+    font-size: 100px;
+    font-weight: 700;
+}
+.hand-hand-icon{
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    gap: 20px;
+}
+.hand-hand-icon img{
+    width: 105px;
+}
+.hero-latest-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    width: 310px;
+    height: 70px;
+    background-color: red;
+    border-radius: 75px;
+    margin-top: 35px;
+    cursor: pointer;
+}
+.Hero-rigth{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media(max-width:1280px){
+    .Hero-left{
+    padding-left: 100px;
+    }
+    .Hero-left h2{
+        font-size: 22px;
+    }
+    .Hero-left p{
+        font-size: 60px
+    }
+    .hand-hand-icon img{
+        width: 80px;
+    }
+    .hero-latest-btn{
+        gap: 10px;
+        width: 220px;
+        height: 60px;
+        font-size: 18px;
+        margin-top: 15px;
+    }
+    .Hero-rigth img{
+        width: 500px;
+    }
+}
+@media(max-width:1024px){
+    .Hero-left{
+    padding-left: 80px;
+    }
+    .Hero-left h2{
+        font-size: 20px;
+    }
+    .Hero-left p{
+        font-size: 50px;
+    }
+    .hand-hand-icon img{
+        width: 60px;
+    }
+    .hero-latest-btn{
+        gap: 10px;
+        width: 220px;
+        height: 50px;
+        margin-top: 16px;
+    }
+    .Hero-rigth {
+        padding-top: 20px;
+        display: block;
+        margin-top: 30px;
+    }
+}
+@media(max-width:800px){
+    .Hero-left{
+    padding-left: 60px;
+    }
+    .Hero-left h2{
+        font-size: 16px;
+    }
+    .Hero-left p{
+        font-size: 40px;
+    }
+    .hand-hand-icon img{
+        padding-top: 20px;
+    }
+    .hero-latest-btn{
+        gap: 10px;
+        width: 220px;
+        height: 50px;
+        margin-top: 16px;
+    }
+    .Hero-rigth img{
+        width: 200px;
+    }
+}
+@media (max-width:500px){
+    .Hero{
+        flex-direction: column;
+        gap: 20px;
+    }
+    .Hero-rigth{
+        display: none;
+    }
+    .Hero-rigth img{
+        width: 200px;
+        height: 100px;
+    }
+    .Hero-left{
+        padding-top: 50px;
+    }
+}
