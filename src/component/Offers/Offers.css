@@ -16,7 +16,7 @@
 }
 .offers-left h1{
     color: #171717;
-    font-size: 80px;
+    font-size: 70px;
     font-weight: 600;
 }
 .offers-left p{
@@ -42,5 +42,97 @@
     align-items: center;
     justify-content: flex-end;
     padding-top:50px ;
-    padding-left: 150px;
+    /* padding-left: 150px; */
+}
+@media(max-width:1280px){
+    .offers{
+        margin-top: 20px;
+        padding: 0 80px;
+        margin-bottom: 120px;
+    }
+    .offers h1{
+        font-size: 40px;
+    }
+    .offers p{
+        font-size: 17px;
+    }
+    .offers-right img{
+        width: 300px;
+    }
+    .offers button {
+        width: 220px;
+        height: 50px;
+        font-size: 17px;
+    }
+    .offers-right{
+        padding-top: 40px;
+    }
+}
+@media(max-width:1024px){
+    .offers{
+        padding: 0 60px;
+        margin-bottom: 80px;
+        height: 40vh;
+    }
+    .offers h1{
+        font-size: 30px;
+    }
+    .offers p{
+        font-size: 15px;
+    }
+    .offers-right img{
+        width: 200px;
+    }
+    .offers button {
+        width: 160px;
+        height: 40px;
+        font-size: 14px;
+    }
+    .offers-right{
+        padding-top: 20px;
+    }
+}
+@media(max-width:800px){
+    .offers{
+        margin-bottom: 80px;
+    }
+    .offers h1{
+        font-size: 22px;
+    }
+    .offers p{
+        font-size: 14px;
+    }
+    .offers-right img{
+        width: 180px;
+    }
+    .offers button {
+        width: 120px;
+        height: 30px;
+        font-size: 13px;
+    }
+    
+}
+@media(max-width:500px){
+    .offers{
+        margin-top: 300px;
+        height: 25vh;
+        margin-bottom: 60px;
+    }
+    .offers h1{
+        font-size: 17px;
+    }
+    .offers p{
+        font-size: 10px;
+    }
+    .offers-right img{
+        width: 125px;
+        padding-left: 30px;
+    }
+    .offers button {
+        width: 100px;
+        height: 20px;
+        font-size: 10px;
+        margin-top: 12px;
+    }
+    
 }

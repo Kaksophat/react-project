@@ -41,7 +41,7 @@
   cursor: pointer;
 }
 .nav-menu li hr {
-  width: 80%;
+  width: 100%;
   border: none;
   height: 3px;
   border-radius: 10px;

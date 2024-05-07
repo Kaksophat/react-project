@@ -1,4 +1,4 @@
-import React from 'react'
+
 import "./Poppular.css"
 import Data_product from "../Assets/data";
 import Item from '../Item/Item';

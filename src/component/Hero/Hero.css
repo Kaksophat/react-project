@@ -126,16 +126,27 @@
 @media (max-width:500px){
     .Hero{
         flex-direction: column;
-        gap: 20px;
+        gap: 15px;
     }
     .Hero-rigth{
         display: none;
     }
-    .Hero-rigth img{
-        width: 200px;
-        height: 100px;
-    }
+  
     .Hero-left{
-        padding-top: 50px;
+        padding-top: 40px;
+    }
+    .Hero-left h2{
+        font-size: 18px;
+    }
+    .Hero-left p{
+        font-size: 50px;
+    }
+    .hand-hand-icon img{
+        width: 55px;
+    }
+    .hero-latest-btn{
+        width: 200px;
+        height: 45px;
+        font-size: 15px;
     }
 }
