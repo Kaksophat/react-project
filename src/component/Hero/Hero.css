@@ -72,7 +72,7 @@
         margin-top: 15px;
     }
     .Hero-rigth img{
-        width: 500px;
+        width: 400px;
     }
 }
 @media(max-width:1024px){
@@ -120,8 +120,9 @@
         margin-top: 16px;
     }
     .Hero-rigth img{
-        width: 200px;
+        width: 100px;
     }
+   
 }
 @media (max-width:500px){
     .Hero{
@@ -148,5 +149,8 @@
         width: 200px;
         height: 45px;
         font-size: 15px;
+    }
+    .Hero-rigth img{
+        padding-left: 10px;
     }
 }

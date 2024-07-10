@@ -26,7 +26,7 @@
 }
 @media (max-width: 1280px) {
     .newcollection {
-        height: 70vh;
+        margin-bottom: 80px;
     }
     .newcollection h2 {
         font-size: 40px;
@@ -42,9 +42,8 @@
 }
 
 @media (max-width: 1024px) {
-    .newcollection {
-        height: 60vh;
-        margin-bottom: 400px;
+    .newcollection {      
+        margin-bottom: 60px;
     }
     .newcollection h2 {
         font-size: 30px;
@@ -60,8 +59,9 @@
 }
 @media (max-width: 800px) {
     .newcollection {
-        height: 50vh;
+        /* height: 55vh; */
         gap: 6px;
+        /* margin-bottom: 50px; */
     }
     .newcollection h2 {
         font-size: 25px;
@@ -74,15 +74,17 @@
     }
 }
 @media (max-width:500px){
-    .newcollection{
-        height: 90vh;
-        margin-top: 70px;
-        /* padding-top: 350px; */
+    .newcollection {
+        /* height: 20vh; */
+        gap: 6px;
+        margin-bottom: 50px;
     }
+
     .collections{
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 15px;
+        gap: 40px;
+        /* margin-bottom: 100px; */
     }
 }
 
