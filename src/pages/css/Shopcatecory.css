@@ -64,3 +64,26 @@
         font-size: 16px;
     }
 }
+@media (max-width:800px){
+    .shopcatecory-banner{
+        width: 90%;
+    }
+    .shopcatecory-products{
+        width: 95%;
+       
+    }
+    .shopcatecory-products .item{
+        margin: auto;
+    }
+    .shopcatecoty-load{
+        width: 60px auto;
+        height: 150px;
+        height: 40px;
+        font-size: 13px;
+    }
+}
+@media (max-width:500px){
+    .shopcatecory-products{
+        grid-template-columns: 1fr 1fr;
+    }
+}
