@@ -92,3 +92,60 @@
     color: white;
     cursor: pointer;
 }
+
+@media (max-width:1280px){
+    .cartitem{
+        margin: 60px 50px;
+    }
+    .cartitem-format-main{
+        grid-template-columns: 0.5fr 2fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr ;
+        gap: 20px;
+        padding:15px 0px;
+        font-size: 15px;
+    }
+    .carticon-product-icon{
+        height: 50px;
+    }
+    .cartitem-quantify{
+        width: 40px;
+        height: 50px;
+    }
+    .removecart{
+        margin: auto;
+    }
+    .cartitems-down{
+        margin: 80px 0px;
+        flex-direction: column;
+        gap: 80px;
+    }
+    .cartitem-total{
+        margin: 0;
+    }
+    .cartitem-total button{
+        width: 200px;
+        height: 45px;
+       font-size: 15px;
+    }
+    .cartitem-promobox{
+        width: auto;
+        max-width: 500px;
+    }
+    .cartitem-promobox input{
+        width: 100%;
+    }
+    .cartitem-promobox button{
+        width: 120px;
+        margin-left: -122px;
+    }
+}
+
+@media (max-width:500px){
+    .cartitem-format-main{
+        display: none;
+        grid-template-columns: 0.5fr 3fr 0.5fr;
+        gap: 10px;
+    }
+    .cartitem-format{
+        display: grid;
+    }
+}
