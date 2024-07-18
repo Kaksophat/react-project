@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-key */
 // import React from 'react'
-import "./cartitems.css"
+import "./Cartitems.css"
 import remove_icon from "../Assets/cart_cross_icon.png"
 import { useContext } from "react"
 import { ShopContext } from "../../Context/Shopcontext"
