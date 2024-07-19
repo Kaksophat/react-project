@@ -6,7 +6,7 @@ const Newcollection = () => {
   const [Newcollection_image,setnew_collections]= useState([])
 
   useEffect(()=>{
-    fetch('http://localhost:3000/newcollection')
+    fetch('https://reactjs-e-comer-backend.onrender.com/newcollection')
     .then((res)=>res.json())
     .then((data)=>{setnew_collections(data)})
   },[])

@@ -16,10 +16,10 @@ const ShopContextprovider= (props)=>{
     useEffect(()=>{
         fetch('https://reactjs-e-comer-backend.onrender.com/allproduct')
         .then((res)=>res.json())
-        .then((data)=>{set_allproduct(data)})
-
+        .then((data)=>{set_allproduct(data),console.log(set_allproduct(data));})
+        
         if(localStorage.getItem('Auth-Token')){
-            fetch('http://localhost:3000/getcart', {
+            fetch('https://localhost:3000/getcart', {
                       method: 'POST',
                         headers: {
                             Accept: 'application/form-data',
@@ -39,7 +39,7 @@ const ShopContextprovider= (props)=>{
         setcartiems((prev)=>({...prev,[itemid]:prev[itemid]+1}));
 
         if (localStorage.getItem('Auth-Token')) { // Adjusted key name to remove space
-            fetch('http://localhost:3000/addtocart', {
+            fetch('https://reactjs-e-comer-backend.onrender.com/addtocart', {
                 method: 'POST',
                 headers: {
                     Accept: 'application/form-data',
@@ -56,7 +56,7 @@ const ShopContextprovider= (props)=>{
     const removecart=(itemid)=>{
         setcartiems((prev)=>({...prev,[itemid]:prev[itemid]-1}))
         if(localStorage.getItem('Auth-Token')){
-            fetch('http://localhost:3000/removecart', {
+            fetch('https://https://reactjs-e-comer-backend.onrender.com/removecart', {
                 method: 'POST',
                 headers: {
                     Accept: 'application/form-data',
