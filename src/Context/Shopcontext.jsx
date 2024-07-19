@@ -1,4 +1,5 @@
 import { createContext, useEffect, useState } from "react";
+import Loginsingup from "../pages/login_shop";
 
 
 export const  ShopContext= createContext(null)
@@ -54,6 +55,7 @@ const ShopContextprovider= (props)=>{
         }
      else {
             alert("Please create an account before adding items to the cart.");
+                  <Loginsingup/>
         }
         
     }
