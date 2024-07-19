@@ -19,7 +19,7 @@ const ShopContextprovider= (props)=>{
         .then((data)=>{set_allproduct(data),console.log(set_allproduct(data));})
         
         if(localStorage.getItem('Auth-Token')){
-            fetch('https://localhost:3000/getcart', {
+            fetch('https://reactjs-e-comer-backend.onrender.com/getcart', {
                       method: 'POST',
                         headers: {
                             Accept: 'application/form-data',
