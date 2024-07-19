@@ -39,9 +39,9 @@ const ShopContextprovider= (props)=>{
   } ,[])
 
     const addtocart=(itemid)=>{
-        setcartiems((prev)=>({...prev,[itemid]:prev[itemid]+1}));
-
+       
         if (localStorage.getItem('Auth-Token')) { // Adjusted key name to remove space
+          setcartiems((prev)=>({...prev,[itemid]:prev[itemid]+1}));
             fetch('https://reactjs-e-comer-backend.onrender.com/addtocart', {
                 method: 'POST',
                 headers: {
@@ -57,8 +57,8 @@ const ShopContextprovider= (props)=>{
         
     }
     const removecart=(itemid)=>{
-        setcartiems((prev)=>({...prev,[itemid]:prev[itemid]-1}))
         if(localStorage.getItem('Auth-Token')){
+        setcartiems((prev)=>({...prev,[itemid]:prev[itemid]-1}))
             fetch('https://https://reactjs-e-comer-backend.onrender.com/removecart', {
                 method: 'POST',
                 headers: {
