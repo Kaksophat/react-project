@@ -9,7 +9,7 @@ const Popular = () => {
 
   const fetchInfo = async () => {
     try {
-      const response = await fetch('https://localhost:3000/popularwomen');
+      const response = await fetch('https://https://reactjs-e-comer-backend.onrender.com/popularwomen');
       if (!response.status==200) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
