@@ -31,6 +31,9 @@ const ShopContextprovider= (props)=>{
                     .then((res) => res.json())
                     .then((data) => {setcartiems(data)})
                  }
+      else{
+            alert("create an account befor buy product")
+        }
 
        
   } ,[])
