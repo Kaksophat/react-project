@@ -9,15 +9,12 @@ const Popular = () => {
 
   const fetchInfo = async () => {
     try {
-      const response = await fetch('https://https://reactjs-e-comer-backend.onrender.com/popularwomen');
+      const response = await fetch('https://reactjs-e-comer-backend.onrender.com/popularwomen');
       if (!response.status==200) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
       const data = await response.json();
-      setpopularproduct(data)
-      
-
-  
+      setpopularproduct(data)  
     } catch (error) {
       console.error('Error fetching product data:', error);
     } 
