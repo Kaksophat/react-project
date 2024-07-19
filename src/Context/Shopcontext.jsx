@@ -31,9 +31,7 @@ const ShopContextprovider= (props)=>{
                     .then((res) => res.json())
                     .then((data) => {setcartiems(data)})
                  }
-      else{
-            alert("create an account befor buy product")
-        }
+      
 
        
   } ,[])
@@ -53,6 +51,9 @@ const ShopContextprovider= (props)=>{
             })
             .then((res) => res.json())
             .then((data) => console.log(data))      
+        }
+     else {
+            alert("Please create an account before adding items to the cart.");
         }
         
     }
