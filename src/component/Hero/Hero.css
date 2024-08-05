@@ -4,6 +4,7 @@
     background: linear-gradient(180deg, #fde1ff 0%, #e1ffe122 50%);
     display: flex;
     position: relative;
+    top: 90px;
 }
 .Hero-left{
     flex: 1;
@@ -53,6 +54,9 @@
     align-items: center;
 }
 @media(max-width:1280px){
+    .Hero{
+        top: 0;
+    }
     .Hero-left{
     padding-left: 100px;
     }
@@ -77,8 +81,11 @@
     }
 }
 @media(max-width:1024px){
+    .Hero{
+        top: 0;
+    }
     .Hero-left{
-    padding-left: 80px;
+    padding-left: 300px;
     }
     .Hero-left h2{
         font-size: 20px;

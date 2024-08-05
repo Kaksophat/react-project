@@ -1,7 +1,6 @@
+/* eslint-disable react/prop-types */
 import { createContext, useEffect, useState } from "react";
-
 export const ShopContext = createContext(null);
-
 const getCart = () => {
     let Cart = {};
     for (let index = 0; index < 300 + 1; index++) {
@@ -15,14 +14,14 @@ const ShopContextProvider = (props) => {
     const [cartitems, setcartiems] = useState(getCart());
 
     useEffect(() => {
-        fetch('https://reactjs-e-comer-backend.onrender.com/allproduct')
+        fetch('http://localhost:3000/allproduct')
             .then((res) => res.json())
             .then((data) => {
                 set_allproduct(data);
             });
 
         if (localStorage.getItem('Auth-Token')) {
-            fetch('https://reactjs-e-comer-backend.onrender.com/getcart', {
+            fetch('http://localhost:3000/getcart', {
                 method: 'POST',
                 headers: {
                     Accept: 'application/form-data',
@@ -39,10 +38,11 @@ const ShopContextProvider = (props) => {
     }, []);
 
     const addtocart = (itemid) => {
+
         if (localStorage.getItem('Auth-Token')) {
             setcartiems((prev) => ({ ...prev, [itemid]: prev[itemid] + 1 }));
 
-            fetch('https://reactjs-e-comer-backend.onrender.com/addtocart', {
+            fetch('http://localhost:3000/addtocart', {
                 method: 'POST',
                 headers: {
                     Accept: 'application/form-data',
@@ -54,7 +54,8 @@ const ShopContextProvider = (props) => {
                 .then((res) => res.json())
                 .then((data) => console.log(data));
         } else {
-            alert("Please create an account before adding items to the cart.");
+            
+               window.location.replace("/login")     
         }
     };
 
@@ -62,7 +63,7 @@ const ShopContextProvider = (props) => {
         if (localStorage.getItem('Auth-Token')) {
             setcartiems((prev) => ({ ...prev, [itemid]: prev[itemid] - 1 }));
 
-            fetch('https://reactjs-e-comer-backend.onrender.com/removecart', {
+            fetch('http://localhost:3000/removecart', {
                 method: 'POST',
                 headers: {
                     Accept: 'application/form-data',
@@ -98,9 +99,10 @@ const ShopContextProvider = (props) => {
     };
 
     const Contextvalue = { all_product, cartitems, addtocart, removecart, gettotalcart, gettotalcartitem };
-
+     
     return (
         <ShopContext.Provider value={Contextvalue}>
+            
             {props.children}
         </ShopContext.Provider>
     );
