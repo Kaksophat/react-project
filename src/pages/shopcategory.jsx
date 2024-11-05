@@ -5,6 +5,8 @@ import  "./css/Shopcatecory.css";
 import { ShopContext } from '../Context/Shopcontext';
  const Shopcategory = (props) => {
   const {all_product} = useContext(ShopContext)
+  console.log(all_product);
+  
   return (
     <>
      <div className='shop-category'>
@@ -20,7 +22,7 @@ import { ShopContext } from '../Context/Shopcontext';
       <div className="shopcatecory-products">
         {all_product.map((item,i)=>{
           // eslint-disable-next-line react/prop-types, no-undef
-          if(props.category=== item.category)
+          if(props.category=== item.type)
           {
             return <Item  key={i}  id={item.id} name={item.name} image={item.image} new_price={item.new_price} 
             old_price={item.old_price} />

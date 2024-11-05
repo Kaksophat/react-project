@@ -2,7 +2,7 @@
 import "./Hero.css"
 import Hand_icon from '../Assets/hand_icon.png'
 import arrow from '../Assets/arrow.png'
-import hero_image from '../Assets/hero_image.png'
+// import hero_image from '../Assets/hero_image.png'g
 
 const Hero = () => {
   return (

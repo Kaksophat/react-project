@@ -1,6 +1,5 @@
-import { createContext, useEffect, useState } from "react";
-import Loginsingup from "../pages/login_shop";
-
+import { createContext, useState } from "react";
+import all_product from "../component/Assets/all_product"
 
 export const  ShopContext= createContext(null)
  const getCart=()=>{
@@ -11,69 +10,17 @@ export const  ShopContext= createContext(null)
        return Cart;
  }
 const ShopContextprovider= (props)=>{
-   const [all_product,set_allproduct] = useState([])
     const [cartitems, setcartiems] = useState(getCart());
 
-    useEffect(()=>{
-        fetch('https://reactjs-e-comer-backend.onrender.com/allproduct')
-        .then((res)=>res.json())
-        .then((data)=>{set_allproduct(data),console.log(set_allproduct(data));})
-        
-        if(localStorage.getItem('Auth-Token')){
-            fetch('https://reactjs-e-comer-backend.onrender.com/getcart', {
-                      method: 'POST',
-                        headers: {
-                            Accept: 'application/form-data',
-                            'Content-Type': 'application/json',
-                            'Auth-Token': `${localStorage.getItem('Auth-Token')}` // Common practice to use Bearer token
-                        },
-                        body: ""
-                    })
-                    .then((res) => res.json())
-                    .then((data) => {setcartiems(data)})
-                 }
-      
-
-       
-  } ,[])
-
+ 
     const addtocart=(itemid)=>{
+        setcartiems((prev)=>({...prev,[itemid]:prev[itemid]+1}))
        
-        if (localStorage.getItem('Auth-Token')) { // Adjusted key name to remove space
-          setcartiems((prev)=>({...prev,[itemid]:prev[itemid]+1}));
-            fetch('https://reactjs-e-comer-backend.onrender.com/addtocart', {
-                method: 'POST',
-                headers: {
-                    Accept: 'application/form-data',
-                    'Content-Type': 'application/json',
-                    'Auth-Token': `${localStorage.getItem('Auth-Token')}` // Common practice to use Bearer token
-                },
-                body: JSON.stringify({ 'itemid': itemid })
-            })
-            .then((res) => res.json())
-            .then((data) => console.log(data))      
-        }
-     else {
-            alert("Please create an account before adding items to the cart.");
-                  <Loginsingup/>
-        }
-        
+       
     }
     const removecart=(itemid)=>{
-        if(localStorage.getItem('Auth-Token')){
+      
         setcartiems((prev)=>({...prev,[itemid]:prev[itemid]-1}))
-            fetch('https://https://reactjs-e-comer-backend.onrender.com/removecart', {
-                method: 'POST',
-                headers: {
-                    Accept: 'application/form-data',
-                    'Content-Type': 'application/json',
-                    'Auth-Token': `${localStorage.getItem('Auth-Token')}` // Common practice to use Bearer token
-                },
-                body: JSON.stringify({ 'itemid': itemid })
-            })
-            .then((res) => res.json())
-            .then((data) => console.log(data))      
-        }
     }
     const gettotalcart= ()=>{
         var totalamout = 0;
