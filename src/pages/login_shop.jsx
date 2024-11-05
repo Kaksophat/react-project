@@ -16,7 +16,7 @@ import "./css/loginsingup.css"
 
   const Login = async()=>{
     try {
-      let signupResponse = await fetch("http://localhost:3000/login",{
+      let signupResponse = await fetch("https://reactjs-e-comer-backend.onrender.com/login",{
         method: 'POST',
         headers: {
           Accept: 'application/form-data',
@@ -42,7 +42,7 @@ import "./css/loginsingup.css"
   }
   const Signup = async()=>{
         try {
-          let signupResponse = await fetch("http://localhost:3000/signup",{
+          let signupResponse = await fetch("https://reactjs-e-comer-backend.onrender.com/signup",{
             method: 'POST',
             headers: {
               Accept: 'application/form-data',

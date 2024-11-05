@@ -8,7 +8,7 @@ const Breadcrum = ({product}) => {
   return (
     <React.Fragment>
      <div className="breadcrum">
-        HOME <img src={Breadcrum_arrow} alt="icon" /> SHOP <img src={Breadcrum_arrow} alt="icon" /> {product.category} <img src={Breadcrum_arrow} alt="icon" /> {product.name}
+        HOME <img src={Breadcrum_arrow} alt="icon" /> SHOP <img src={Breadcrum_arrow} alt="icon" /> {product?.category} <img src={Breadcrum_arrow} alt="icon" /> {product?.name}
      </div>
     </React.Fragment>
   )

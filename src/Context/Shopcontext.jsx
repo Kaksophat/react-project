@@ -1,48 +1,46 @@
 /* eslint-disable react/prop-types */
 import { createContext, useEffect, useState } from "react";
-export const ShopContext = createContext(null);
-const getCart = () => {
-    let Cart = {};
-    for (let index = 0; index < 300 + 1; index++) {
-        Cart[index] = 0;
-    }
-    return Cart;
-};
 
-const ShopContextProvider = (props) => {
-    const [all_product, set_allproduct] = useState([]);
+
+export const  ShopContext= createContext(null)
+ const getCart=()=>{
+       let Cart = {};
+       for(let index =0; index < 300+1; index++){
+        Cart[index]=0;
+       }
+       return Cart;
+ }
+const ShopContextprovider= (props)=>{
+   const [all_product,set_allproduct] = useState([])
     const [cartitems, setcartiems] = useState(getCart());
 
     useEffect(() => {
-        fetch('https://reactjs-e-comer-backend.onrender.com/allproduct')
-            .then((res) => res.json())
-            .then((data) => {
-                set_allproduct(data);
-            });
+        fetch('http://localhost:3000/allproduct')
+        .then((res)=>res.json())
+        .then((data)=>{set_allproduct(data)})
+        
+        if(localStorage.getItem('Auth-Token')){
+            fetch('https://localhost:3000/getcart', {
+                      method: 'POST',
+                        headers: {
+                            Accept: 'application/form-data',
+                            'Content-Type': 'application/json',
+                            'Auth-Token': `${localStorage.getItem('Auth-Token')}` // Common practice to use Bearer token
+                        },
+                        body: ""
+                    })
+                    .then((res) => res.json())
+                    .then((data) => {setcartiems(data)})
+                 }
 
-        if (localStorage.getItem('Auth-Token')) {
-            fetch('http://localhost:3000/getcart', {
-                method: 'POST',
-                headers: {
-                    Accept: 'application/form-data',
-                    'Content-Type': 'application/json',
-                    'Auth-Token': `${localStorage.getItem('Auth-Token')}` // Common practice to use Bearer token
-                },
-                body: ""
-            })
-                .then((res) => res.json())
-                .then((data) => {
-                    setcartiems(data);
-                });
-        }
-    }, []);
+       
+  } ,[])
 
-    const addtocart = (itemid) => {
+    const addtocart=(itemid)=>{
+        setcartiems((prev)=>({...prev,[itemid]:prev[itemid]+1}));
 
-        if (localStorage.getItem('Auth-Token')) {
-            setcartiems((prev) => ({ ...prev, [itemid]: prev[itemid] + 1 }));
-
-            fetch('http://localhost:3000/addtocart', {
+        if (localStorage.getItem('Auth-Token')) { // Adjusted key name to remove space
+            fetch('https://reactjs-e-comer-backend.onrender.com/addtocart', {
                 method: 'POST',
                 headers: {
                     Accept: 'application/form-data',
@@ -51,19 +49,15 @@ const ShopContextProvider = (props) => {
                 },
                 body: JSON.stringify({ 'itemid': itemid })
             })
-                .then((res) => res.json())
-                .then((data) => console.log(data));
-        } else {
-            
-               window.location.replace("/login")     
+            .then((res) => res.json())
+            .then((data) => console.log(data))      
         }
-    };
-
-    const removecart = (itemid) => {
-        if (localStorage.getItem('Auth-Token')) {
-            setcartiems((prev) => ({ ...prev, [itemid]: prev[itemid] - 1 }));
-
-            fetch('http://localhost:3000/removecart', {
+        
+    }
+    const removecart=(itemid)=>{
+        setcartiems((prev)=>({...prev,[itemid]:prev[itemid]-1}))
+        if(localStorage.getItem('Auth-Token')){
+            fetch('https://https://reactjs-e-comer-backend.onrender.com/removecart', {
                 method: 'POST',
                 headers: {
                     Accept: 'application/form-data',
@@ -108,4 +102,5 @@ const ShopContextProvider = (props) => {
     );
 };
 
-export default ShopContextProvider;
+
+export default ShopContextprovider

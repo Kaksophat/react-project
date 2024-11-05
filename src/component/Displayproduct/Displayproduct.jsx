@@ -12,21 +12,21 @@ const Displayproduct = (product1) => {
       <div className="displayproduct">
         <div className="displayproduct-left">
           <div className="displayproduct-img-list">
-            <img src={product.image} alt="" />
-            <img src={product.image} alt="" />
-            <img src={product.image} alt="" />
-            <img src={product.image} alt="" />
+            <img src={product?.image} alt="" />
+            <img src={product?.image} alt="" />
+            <img src={product?.image} alt="" />
+            <img src={product?.image} alt="" />
           </div>
           <div className="displayproduct-img">
             <img
               className="displayproduct-main-img"
-              src={product.image}
+              src={product?.image}
               alt=""
             />
           </div>
         </div>
         <div className="displayproduct-right">
-          <h1>{product.name}</h1>
+          <h1>{product?.name}</h1>
           <div className="displayproduct-star">
             <img src={star_icon} alt="" />
             <img src={star_icon} alt="" />
@@ -37,10 +37,10 @@ const Displayproduct = (product1) => {
           </div>
           <div className="displyproduct-right-price">
             <div className="displayproduct-right-price-old">
-              ${product.old_price}
+              ${product?.old_price}
             </div>
             <div className="displayproduct-right-price-new">
-              ${product.new_price}
+              ${product?.new_price}
             </div>
           </div>
           <div className="displayproduct-right-description">
@@ -58,7 +58,7 @@ const Displayproduct = (product1) => {
                 <div>XXL</div>
             </div>
           </div>
-          <button onClick={()=>{addtocart(product.id)}}>ADD TO CART</button>
+          <button onClick={()=>{addtocart(product?.id)}}>ADD TO CART</button>
           <p className="displayproduct-right-category"> <span>Category :</span> Women , T-shirt , crop , top</p>
           <p className="displayproduct-right-category"> <span>tags :</span> modern , letest</p>
         </div>
