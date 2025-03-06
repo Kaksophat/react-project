@@ -1,19 +1,22 @@
 import "./Poppular.css";
 import Item from '../Item/Item';
-import { useEffect, useState } from "react";
+import popularwomen from "../Assets/data"; // Static data import
+import { useEffect, useState } from "react"; // Importing React hooks
 
 const Popular = () => {
-  const [popularProducts, setPopularProducts] = useState([]);
+  const [popularProducts, setPopularProducts] = useState(popularwomen); // Fallback to static data initially
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   const fetchInfo = async () => {
     try {
-      const response = await fetch('https://reactjs-e-comer-backend.onrender.com/popularwomen');
+      const response = await fetch('http://localhost:3000/popularwomen');
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
       const data = await response.json();
+      console.log(data);
+      
       setPopularProducts(data);
       setLoading(false);
     } catch (error) {

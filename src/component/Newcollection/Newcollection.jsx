@@ -1,14 +1,15 @@
-import React, { useEffect, useState } from 'react';
 import "./Newcollection.css";
 import Item from '../Item/Item';
+import new_collection from "../Assets/new_collections"; // Static fallback data import
+import { useState,useEffect } from "react";
 
 const NewCollection = () => {
-  const [newCollectionImages, setNewCollectionImages] = useState([]);
+  const [newCollectionImages, setNewCollectionImages] = useState(new_collection); // Initialize with static data
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch('http://localhost:3000/newcollection')
+    fetch('https://reactjs-e-comer-backend.onrender.com/newcollection')
       .then((res) => {
         if (!res.ok) {
           throw new Error('Network response was not ok');
@@ -16,7 +17,7 @@ const NewCollection = () => {
         return res.json();
       })
       .then((data) => {
-        setNewCollectionImages(data);
+        setNewCollectionImages(data); // Replace with fetched data if successful
         setLoading(false);
       })
       .catch((error) => {
