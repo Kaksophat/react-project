@@ -18,12 +18,12 @@ const ShopContextprovider = (props) => {
 
     useEffect(() => {
         // Fetch product data from the server if needed, fallback to local data
-        fetch('http://localhost:3000/allproduct')
+        fetch('https://reactjs-e-comer-backend.onrender.com/allproduct')
             .then((res) => res.json())
             .then((data) => { set_allproduct(data); }) // Store fetched data if available
 
         if (localStorage.getItem('Auth-Token')) {
-            fetch('https://localhost:3000/getcart', {
+            fetch('https://reactjs-e-comer-backend.onrender.com/getcart', {
                 method: 'POST',
                 headers: {
                     Accept: 'application/form-data',
@@ -41,7 +41,7 @@ const ShopContextprovider = (props) => {
         setcartiems((prev) => ({ ...prev, [itemid]: prev[itemid] + 1 }));
 
         if (localStorage.getItem('Auth-Token')) {
-            fetch('http://localhost:3000/addtocart', {
+            fetch('https://reactjs-e-comer-backend.onrender.com/addtocart', {
                 method: 'POST',
                 headers: {
                     Accept: 'application/form-data',
@@ -59,7 +59,7 @@ const ShopContextprovider = (props) => {
         setcartiems((prev) => ({ ...prev, [itemid]: prev[itemid] - 1 }));
 
         if (localStorage.getItem('Auth-Token')) {
-            fetch('http://localhost:3000/removecart', {
+            fetch('https://reactjs-e-comer-backend.onrender.com/removecart', {
                 method: 'POST',
                 headers: {
                     Accept: 'application/form-data',

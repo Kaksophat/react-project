@@ -7,7 +7,7 @@ import { ShopContext } from "../../Context/Shopcontext"
 
 
 const CartItem = () => {
-  const {all_product,cartitems,removecart,gettotalcart}= useContext(ShopContext)
+  const {allProducts,cartitems,removecart,gettotalcart}= useContext(ShopContext)
   return (
     <>
     <div className="cartitem">
@@ -20,7 +20,7 @@ const CartItem = () => {
         <p>Remove</p>
       </div>
       <hr />
-     {all_product.map((e)=>{
+     {allProducts.map((e)=>{
         if(cartitems[e.id]>0){
             return  <div>
             <div className="cartitem-format cartitem-format-main">
